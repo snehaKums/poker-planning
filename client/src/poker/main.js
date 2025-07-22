@@ -16,7 +16,7 @@ import {
   Chip,
 } from '@mui/material';
 
-const socket = io('http://localhost:4000');
+const socket = io('https://poker-planning-server-silk.vercel.app');
 
 const gradientColors = [
   'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
