@@ -5,7 +5,10 @@ const { Server } = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: '*' }
+  cors: {
+    origin: "https://poker-planning-client-six.vercel.app", 
+    methods: ["GET", "POST"]
+  }
 });
 
 const sessions = {}; // sessionId -> { tickets, votes: { userId: vote }, users: [] }
@@ -95,4 +98,4 @@ io.to(sessionId).emit('sessionUpdate', {
   });
 });
 
-server.listen(80, () => console.log('Server running on http://localhost:4000'));
+server.listen(80, () => console.log('Server running on vercel'));
